@@ -1,0 +1,143 @@
+@font-face {
+  font-family: RobotoRegular;
+  src: url("../fonts/Roboto_Regular.woff"), url("../fonts/Roboto_Regular.woff2"); }
+@font-face {
+  font-family: RobotoMedium;
+  src: url("../fonts/Roboto_Medium.woff"), url("../fonts/Roboto_Medium.woff2"); }
+@font-face {
+  font-family: RobotoBold;
+  src: url("../fonts/Roboto_Bold.woff"), url("../fonts/Roboto_Bold.woff2"); }
+@font-face {
+  font-family: KaushanRegular;
+  src: url("../fonts/Kaushan_Regular.woff"), url("../fonts/Kaushan_Regular.woff2"); }
+html {
+  font-size: 16px; }
+
+body {
+  position: relative;
+  margin: 0 auto;
+  width: 60%; }
+  @media only screen and (max-width: 560px) {
+    body {
+      width: 80%; } }
+
+.header .header__subtitle {
+  text-align: center;
+  letter-spacing: 0.2rem;
+  color: rgba(0, 0, 0, 0.6);
+  margin: 2vw 0 0 0;
+  font-family: "RobotoMedium";
+  font-size: 1rem; }
+.header .header__title {
+  text-align: center;
+  margin: 0 0 2rem 0;
+  letter-spacing: 0.3rem;
+  font-family: "KaushanRegular";
+  font-size: 2rem; }
+
+main .boxes {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-gap: 1.5rem;
+  grid-template-areas: 'first first second second third third' 'fourth fourth fourth fiveth fiveth fiveth'; }
+  main .boxes .boxes__box:nth-child(1) .img-box {
+    background-image: url("../img/first.jpg"); }
+  main .boxes .boxes__box:nth-child(1) {
+    grid-area: first; }
+  main .boxes .boxes__box:nth-child(2) .img-box {
+    background-image: url("../img/second.jpg"); }
+  main .boxes .boxes__box:nth-child(2) {
+    grid-area: second; }
+  main .boxes .boxes__box:nth-child(3) .img-box {
+    background-image: url("../img/third.jpg"); }
+  main .boxes .boxes__box:nth-child(3) {
+    grid-area: third; }
+  main .boxes .boxes__box:nth-child(4) .img-box {
+    background-image: url("../img/fourth.jpg"); }
+  main .boxes .boxes__box:nth-child(4) {
+    grid-area: fourth; }
+  main .boxes .boxes__box:nth-child(5) .img-box {
+    background-image: url("../img/fiveth.jpg"); }
+  main .boxes .boxes__box:nth-child(5) {
+    grid-area: fiveth; }
+  @media only screen and (max-width: 768px) {
+    main .boxes {
+      grid-template-areas: 'first second third' 'fourth fourth fourth' 'fiveth fiveth fiveth'; } }
+  main .boxes .boxes__box .img-box {
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    height: 35vh;
+    position: relative; }
+    main .boxes .boxes__box .img-box .info-title {
+      margin: 0;
+      text-align: center; }
+    main .boxes .boxes__box .img-box .info-title--main {
+      padding: 0.5vw 1vw;
+      position: absolute;
+      bottom: 0;
+      background-color: white;
+      letter-spacing: 0.3rem;
+      color: rgba(0, 0, 0, 0.7);
+      font-family: "RobotoRegular";
+      font-size: 0.7rem; }
+      @media only screen and (max-width: 400px) {
+        main .boxes .boxes__box .img-box .info-title--main {
+          font-size: 0.4rem; } }
+    main .boxes .boxes__box .img-box .img-box__info {
+      position: relative;
+      display: table;
+      width: 80%;
+      min-height: 19vh;
+      background-color: white;
+      top: 25vh;
+      border: 1px solid rgba(0, 0, 0, 0.2); }
+      @media only screen and (max-width: 560px) {
+        main .boxes .boxes__box .img-box .img-box__info {
+          width: 100%; } }
+      main .boxes .boxes__box .img-box .img-box__info .info-title--secondary {
+        top: -1.4vw;
+        padding: 0.9vw 1vw;
+        margin: 0 auto;
+        width: 70%;
+        position: relative;
+        background-color: #ff6666;
+        color: white;
+        letter-spacing: 0.2rem;
+        font-family: "KaushanRegular";
+        font-size: 1.1rem; }
+        @media only screen and (max-width: 1024px) {
+          main .boxes .boxes__box .img-box .img-box__info .info-title--secondary {
+            font-size: 0.9rem; } }
+      main .boxes .boxes__box .img-box .img-box__info p {
+        font-family: RobotoMedium;
+        font-size: 0.7rem;
+        color: rgba(0, 0, 0, 0.7);
+        width: 92%;
+        margin: -0.5vw auto 0 auto;
+        line-height: 1.2rem; }
+        @media only screen and (max-width: 768px) {
+          main .boxes .boxes__box .img-box .img-box__info p {
+            padding: 2vw 0; } }
+        main .boxes .boxes__box .img-box .img-box__info p a {
+          text-decoration: none;
+          color: red; }
+        main .boxes .boxes__box .img-box .img-box__info p .style-bold {
+          font-weight: bold; }
+  main .boxes .boxes__box .img-box--secondary {
+    height: 29vh;
+    width: 29vw; }
+    @media only screen and (max-width: 768px) {
+      main .boxes .boxes__box .img-box--secondary {
+        margin-bottom: 20vw;
+        width: auto; } }
+    @media only screen and (max-width: 560px) {
+      main .boxes .boxes__box .img-box--secondary {
+        margin-bottom: 30vw; } }
+    @media only screen and (max-width: 400px) {
+      main .boxes .boxes__box .img-box--secondary {
+        margin-bottom: 40vw; } }
+
+/*# sourceMappingURL=master.css.map */

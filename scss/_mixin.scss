@@ -1,0 +1,48 @@
+@mixin font-face($Family, $Name, $StyleCollection) {
+    @for $i from 0 to length($StyleCollection) {
+        @font-face {
+            font-family: $Name +""+ nth($StyleCollection, $i+1);
+            src:
+                url("../fonts/"+$Family+"_"+unquote(nth($StyleCollection, $i+1))+".woff"),
+                url("../fonts/"+$Family+"_"+unquote(nth($StyleCollection, $i+1))+".woff2");
+        }
+    }
+};
+
+@mixin Font($Family, $Weight, $Size, $Style) {
+    font:{family: $Family; weight: $Weight; size: $Size; style: $Style; }
+};
+
+@mixin GenerateImgAndAreas {
+    $Names: 'first', 'second', 'third', 'fourth', 'fiveth';
+
+    @for $i from 1 through length($Names) {
+        & .boxes__box:nth-child(#{$i}) .img-box {
+            background-image: url("../img/"+nth($Names, $i)+".jpg");
+        }
+        & .boxes__box:nth-child(#{$i}) {
+            grid-area: unquote(nth($Names, $i));
+        }
+    }
+}
+
+$Breakpoints: (
+    "Phone": 400px,
+    "Phone-Wide": 480px,
+    "Phablet": 560px,
+    "Tablet-Small": 640px,
+    "Tablet": 768px,
+    "Tablet-Wide": 1024px,
+    "Desktop": 1248px,
+    "Desktop-Wide": 1440px
+    );
+
+@mixin MediaQuery($Width, $Type) {
+    @if map_has_key($Breakpoints, $Width) {
+        $Width: map_get($Breakpoints, $Width);
+
+        @media only screen and (#{$Type}-width: $Width) {
+            @content;
+        }
+    }
+}

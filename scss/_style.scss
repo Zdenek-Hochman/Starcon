@@ -1,0 +1,136 @@
+$KaushanStyle: ('Regular');
+$RobotoStyle: ('Regular', 'Medium', 'Bold');
+
+@include font-face(Roboto, Roboto, $RobotoStyle);
+@include font-face(Kaushan, Kaushan, $KaushanStyle);
+
+html {
+    font-size: 16px;
+}
+
+body {
+    position: relative;
+    margin: 0 auto;
+    width: 60%;
+    @include MediaQuery("Phablet", max) {
+        width: 80%;
+    }
+}
+
+.header {
+    .header__subtitle {
+        text-align: center;
+        letter-spacing: 0.2rem;
+        color: rgba(0,0,0,0.6);
+        margin: 2vw 0 0 0;
+        @include Font("RobotoMedium", null, 1rem, null);
+    }
+    .header__title {
+        text-align: center;
+        margin: 0 0 2rem 0;
+        letter-spacing: 0.3rem;
+        @include Font("KaushanRegular", null, 2rem, null);
+    }
+}
+
+main {
+    .boxes {
+        @include GenerateImgAndAreas();
+        list-style: none;
+        padding: 0;
+        display: grid;
+        grid-gap: 1.5rem;
+        grid-template-areas:
+            'first first second second third third'
+            'fourth fourth fourth fiveth fiveth fiveth';
+        @include MediaQuery("Tablet", max) {
+            grid-template-areas:
+                'first second third'
+                'fourth fourth fourth'
+                'fiveth fiveth fiveth';
+        }
+        .boxes__box {
+            .img-box {
+                background-size: cover;
+                background-position: center;
+                display: flex;
+                justify-content: center;
+                height: 35vh;
+                position: relative;
+                .info-title {
+                    margin: 0;
+                    text-align: center;
+                }
+                .info-title--main {
+                    padding: 0.5vw 1vw;
+                    position: absolute;
+                    bottom: 0;
+                    background-color: white;
+                    letter-spacing: 0.3rem;
+                    color: rgba(0,0,0,0.7);
+                    @include Font("RobotoRegular", null, 0.7rem, null);
+                    @include MediaQuery("Phone", max) {
+                        font-size: 0.4rem;
+                    }
+                }
+                .img-box__info {
+                    position: relative;
+                    display: table;
+                    width: 80%;
+                    min-height: 19vh;
+                    background-color: white;
+                    top: 25vh;
+                    border: 1px solid rgba(0,0,0,0.2);
+                    @include MediaQuery("Phablet", max) {
+                        width: 100%;
+                    }
+                    .info-title--secondary {
+                        top: -1.4vw;
+                        padding: 0.9vw 1vw;
+                        margin: 0 auto;
+                        width: 70%;
+                        position: relative;
+                        background-color: rgb(255, 102, 102);
+                        color: white;
+                        letter-spacing: 0.2rem;
+                        @include Font("KaushanRegular", null, 1.1rem, null);
+                        @include MediaQuery("Tablet-Wide", max) {
+                            font-size: 0.9rem;
+                        }
+                    }
+                    p {
+                        @include Font(RobotoMedium, null, 0.7rem, null);
+                        color: rgba(0,0,0,0.7);
+                        width: 92%;
+                        margin: -0.5vw auto 0 auto;
+                        line-height: 1.2rem;
+                        @include MediaQuery("Tablet", max) {
+                            padding: 2vw 0;
+                        }
+                        a {
+                            text-decoration: none;
+                            color: red;
+                        }
+                        .style-bold {
+                            font-weight: bold;
+                        }
+                    }
+                }
+            }
+            .img-box--secondary {
+                height: 29vh;
+                width: 29vw;
+                @include MediaQuery("Tablet", max) {
+                    margin-bottom: 20vw;
+                    width: auto;
+                }
+                @include MediaQuery("Phablet", max) {
+                    margin-bottom: 30vw;
+                }
+                @include MediaQuery("Phone", max) {
+                    margin-bottom: 40vw;
+                }
+            }
+        }
+    }
+}
